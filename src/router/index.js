@@ -1,15 +1,16 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
-import Profile from "@/views/Profile";
+import Accueil from '../views/Accueil.vue'
+import Profil from "@/views/Profil";
+import Carte from "@/views/Carte";
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    name: 'Accueil',
+    component: Accueil
   },
   {
     path: '/about',
@@ -20,10 +21,16 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   },
   {
-    path: '/profile',
-    name: 'Profile',
-    component: Profile
+    path: '/profil',
+    name: 'Profil',
+    component: Profil
+  },
+  {
+    path: '/trouver-un-bar',
+    name: 'Carte',
+    component: Carte
   }
+
 ]
 
 const router = new VueRouter({

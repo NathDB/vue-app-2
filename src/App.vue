@@ -3,7 +3,9 @@
     <div id="nav">
       <b-navbar toggleable="lg" type="dark" variant="info">
         <b-navbar-brand href="#">
-          <b-img src="../public/img/icons/logo_navbar.png" fluid alt="Responsive image"></b-img>
+          <div>
+            <img v-bind="mainProps" rounded="true" src="public/img/icons/logo_navbar.png" alt="Logo">
+          </div>
         </b-navbar-brand>
 
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -11,9 +13,10 @@
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav>
             <!-- v-bind récupère les routes déclarées dans router/index.js-->
-            <b-nav-item v-bind:to="'/'">Home</b-nav-item>
+            <b-nav-item v-bind:to="'/'">Accueil</b-nav-item>
             <b-nav-item v-bind:to="'/about'">About</b-nav-item>
-            <b-nav-item v-bind:to="'/profile'">Profile</b-nav-item>
+            <b-nav-item v-bind:to="'/profil'">Profil</b-nav-item>
+            <b-nav-item v-bind:to="'/trouver-un-bar'">Trouver un bar</b-nav-item>
           </b-navbar-nav>
 
           <!-- Right aligned nav items -->
@@ -48,26 +51,3 @@
   </div>
 </template>
 
-
-<!--<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>-->
