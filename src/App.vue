@@ -4,7 +4,7 @@
       <b-navbar toggleable="lg" type="dark" variant="info">
         <b-navbar-brand href="#">
           <div>
-            <img v-bind="mainProps" rounded="true" src="public/img/icons/logo_navbar.png" alt="Logo">
+            <img src="public/img/icons/logo_navbar.png" rounded="true"  alt="Logo">
           </div>
         </b-navbar-brand>
 
