@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Accueil from '../views/Accueil.vue'
 import Profil from "@/views/Profil";
 import Carte from "@/views/Carte";
+import GoogleMap from "@/components/GoogleMap";
 
 Vue.use(VueRouter)
 
@@ -29,7 +30,7 @@ const routes = [
   {
     path: '/trouver-un-bar',
     name: 'Carte',
-    component: Carte
+    component: GoogleMap
   }
 
 ]

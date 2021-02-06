@@ -29,11 +29,6 @@ Vue.use(VueGoogleMaps, {
     libraries: "places" // necessary for places input
   }
 });
-new Vue({
-  name:"App",
-  components: { App },
-  template: "<App/>"
-});
 
 Vue.config.productionTip = false
 

@@ -1,7 +1,6 @@
 <template>
   <div class="carte">
-    <Carte/>
-
+    <google-map />
 <!--
     <h1>Trouver une carte</h1>
     <b-button @click="locatorButtonPressed">
@@ -50,7 +49,18 @@
 
   </div>
 </template>
+<script>
+import GoogleMap from "../components/GoogleMap.vue";
 
+export default {
+  name: "App",
+  components: {
+    GoogleMap
+  }
+};
+</script>
+
+<!--
 <script>
 
 import axios from "axios";
@@ -122,3 +132,4 @@ export default {
   }
 }
 </script>
+-->
