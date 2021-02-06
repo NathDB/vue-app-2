@@ -11,6 +11,9 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 import { LMap, LTileLayer, LMarker } from 'vue2-leaflet';
 import 'leaflet/dist/leaflet.css';
 
+import * as VueGoogleMaps from "vue2-google-maps";
+
+
 // Make BootstrapVue available throughout your project
 Vue.use(BootstrapVue)
 // Optionally install the BootstrapVue icon components plugin
@@ -20,6 +23,17 @@ Vue.component('l-map', LMap);
 Vue.component('l-tile-layer', LTileLayer);
 Vue.component('l-marker', LMarker);
 
+Vue.use(VueGoogleMaps, {
+  load: {
+    key: "AIzaSyBqd-wFOtpvWaLwrjih3DbeP-thR0Em_0k",
+    libraries: "places" // necessary for places input
+  }
+});
+new Vue({
+  name:"App",
+  components: { App },
+  template: "<App/>"
+});
 
 Vue.config.productionTip = false
 
