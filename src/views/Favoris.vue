@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <div class="favoris">
     <h1>This is an about page</h1>
     <Cocktails/>
   </div>
@@ -10,7 +10,7 @@
 import Cocktails from '@/components/Cocktails.vue'
 
 export default {
-  name: 'About',
+  name: 'Favoris',
   components: {
     Cocktails
   }
