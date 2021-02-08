@@ -2,6 +2,7 @@
   <!--ICI METTRE LE BOARD DES COCKTAILS-->
   <div class="cocktails">
     <div class="container d-flex p-2 justify-content-center">
+      <h1>{{searchString}}</h1>
       <div class="justify-content-center d-flex">
         <b-card-group deck class="d-flex justify-content-center m-2 flex-md-wrap">
           <div v-for="cocktail in filteredCocktails">
@@ -52,17 +53,22 @@ import axios from "axios";
 
 export default {
   name: "Cocktails",
-    el: '#main',
+    props: {
+      searchString: String,
+      typeAlcool: Number,
+    },
     data() {
       return {
         cocktails: [],
         cocktail_details: [],
-        searchString: "",
       }
     },
     beforeCreate() {
+    //if saisie nulle alors requete sur les alcools
+      //else requête saisie
+      console.log(this.searchString) //erreur : undefined
       axios
-          .get('https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Rum')
+          .get('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=' + this.searchString)
           .then(res => {
             this.cocktails = res.data.drinks
             console.log(res.data.drinks)

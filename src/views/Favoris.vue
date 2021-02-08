@@ -1,7 +1,7 @@
 <template>
   <div class="favoris">
     <h1>This is an about page</h1>
-    <Cocktails/>
+    <Cocktails searchString="margarita"/>
   </div>
 </template>
 
