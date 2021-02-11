@@ -4,6 +4,9 @@ import Accueil from '../views/Accueil.vue'
 import Profil from "@/views/Profil";
 import Carte from "@/views/Carte";
 import GoogleMap from "@/components/GoogleMap";
+import FicheCocktail from "@/components/FicheCocktail";
+import Recherche from "@/views/Recherche";
+import Favoris from "@/views/Favoris";
 
 Vue.use(VueRouter)
 
@@ -14,18 +17,28 @@ const routes = [
     component: Accueil
   },
   {
+    path: '/recherche',
+    name: 'Recherche',
+    //déclarer la vue comme un component
+    component: Recherche
+  },
+  {
     path: '/favoris',
     name: 'Favoris',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     // A voir : c'est quoi ça Monsieur ?
-    component: () => import(/* webpackChunkName: "about" */ '../views/Favoris.vue')
+    component: Favoris
   },
   {
     path: '/profil',
     name: 'Profil',
     component: Profil
+  },
+  {
+    path: '/random',
+    name: 'Random',
   },
   {
     path: '/trouver-un-bar',

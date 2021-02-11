@@ -1,51 +1,60 @@
 <template>
-  <div class="accueil container d-flex p-2 justify-content-center">
-    <div class="d-flex justify-content-center flex-column">
+  <div class="accueil container d-flex p-2 justify-content-center flex-column">
+    <b-col class="m-3 d-flex justify-content-center flex-column ">
       <h1 class="text-center m-5">CO'DRINKS</h1>
-      <b-row class="m-5 justify-content-center">
-        <b-col sm="10">
-          <b-form-input id="saisie" size="lg" placeholder="Une petite soif ?"></b-form-input>
-        </b-col>
-        <b-col class="m-3 d-flex justify-content-center ">
-          <b-button class="m-1" size="sm" variant="outline-info">Vodka</b-button>
-          <b-button class="m-1" size="sm" variant="outline-info">Rhum</b-button>
-          <b-button class="m-1" size="sm" variant="outline-info">Tequila</b-button>
-          <b-button class="m-1" size="sm" variant="outline-info">Champagne</b-button>
-          <b-button class="m-1" size="sm" variant="outline-info">Gin</b-button>
-          <b-button class="m-1" size="sm" variant="outline-info">Whisky</b-button>
-        </b-col>
-      </b-row>
-
-      <div class="d-flex justify-content-center flex-column bd-highlight m-5">
-        <div class="d-flex d-inline justify-content-center m-5">
-          <b-button size="lg" class="d-inline">Mes favoris !</b-button>
-          <b-button size="lg" class="d-inline">Trouver le bar le plus proche !</b-button>
+      <h2 class="text-center m-5">LES BOISSONS 100% CONNECTEES !</h2>
+      <div class="container d-flex flex-column">
+        <h3 class="text-center">Que voulez-vous boire ?</h3>
+        <div class="d-flex justify-content-center flex-row">
+          <b-button class="m-1" variant="outline-info" v-on:click="rechercherParAlcool(alcool[0])">Vodka</b-button>
+          <b-button class="m-1" variant="outline-info" v-on:click="rechercherParAlcool(alcool[1])">Rhum</b-button>
+          <b-button class="m-1" variant="outline-info" v-on:click="rechercherParAlcool(alcool[2])">Tequila</b-button>
+          <b-button class="m-1" variant="outline-info" v-on:click="rechercherParAlcool(alcool[3])">Champagne</b-button>
+          <b-button class="m-1" variant="outline-info" v-on:click="rechercherParAlcool(alcool[4])">Gin</b-button>
+          <b-button class="m-1" variant="outline-info" v-on:click="rechercherParAlcool(alcool[5])">Whisky</b-button>
         </div>
-
-        <p class="text-center">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
-          dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-          It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-          It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with
-          desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
       </div>
-      <Cocktails searchString="margarita"/>
 
+      </b-col>
+    <div class="justify-content-center d-flex flex-column">
+      <b-card-group deck class="d-flex justify-content-center m-2 flex-md-wrap">
+        <div v-if="display" v-for="cocktail in cocktails">
+          <CocktailDetails :cocktail="cocktail"/>
+        </div>
+      </b-card-group>
     </div>
-
-
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-import Cocktails from "@/components/Cocktails";
+import CocktailDetails from "@/components/CocktailDetails";
+import axios from "axios";
 
 export default {
   name: 'Accueil',
   components: {
-    Cocktails,
-    HelloWorld
+    CocktailDetails,
+  },
+  data(){
+    return{
+      cocktails:"",
+      alcool: ["Vodka", "Rum", "Tequila", "Champagne", "Gin", "Whiskey"]
+    }
+  },
+  methods: {
+    rechercherParAlcool(alcool) {
+      this.cocktail = alcool
+      axios
+          .get('https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=' + alcool)
+          .then(res => {
+            this.cocktails = res.data.drinks
+            this.display = true
+            console.log(res.data.drinks)
+          })
+          .catch((e) => {
+            this.error = "Erreur lors de la récupération des données.";
+          });    }
   }
 }
 
