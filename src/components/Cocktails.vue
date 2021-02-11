@@ -5,7 +5,9 @@
       <h2>Résultats pour : {{searchString}}</h2>
       <div class="justify-content-center d-flex flex-column">
         <b-card-group deck class="d-flex justify-content-center m-2 flex-md-wrap">
+<!--          On affiche une card Cocktail (qui est le component CocktailDetails) pour chaque résultat de la recherche-->
           <div v-if="display" v-for="cocktail in filteredCocktails">
+<!--            On envoie au component CocktailDetails l'objet cocktail qui rassemble toutes les données du cocktail-->
             <CocktailDetails :cocktail="cocktail" />
           </div>
         </b-card-group>
@@ -37,11 +39,9 @@ export default {
       }
     },
     mounted() {
-    //if saisie nulle alors requete sur les alcools :
-      //else requête saisie
-      console.log(this.searchString) //erreur : undefined
+      // On fait un nouvel appel API afin d'aller chercher les cocktails qui correspondent à la saisie
+      console.log(this.searchString)
       axios
-          //.get('https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Rum')
           .get('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=' + this.searchString)
           .then(res => {
             this.cocktails = res.data.drinks
@@ -53,6 +53,7 @@ export default {
           });
     },
     computed: {
+      // Fonction de recherche en fonction des caractères saisis
       filteredCocktails: function () {
         let cocktails_array = this.cocktails,
             searchString = this.searchString;

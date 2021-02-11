@@ -1,6 +1,7 @@
 <template>
   <div class="favoris container d-flex justify-content-center p-2 flex-column">
     <h1 class="text-center m-5">Mes cocktails favoris</h1>
+    <p>A venir...</p>
     <div>
       <b-list-group v-for="favori in listeFavoris">
         <b-list-group-item class="d-flex justify-content-between">

@@ -1,7 +1,7 @@
 <template>
   <div class="random container d-flex justify-content-center">
     <h1>cououcuu</h1>
-    <pre>{{cocktail_random}}</pre>
+    <p>A venir...</p>
 
   </div>
 </template>

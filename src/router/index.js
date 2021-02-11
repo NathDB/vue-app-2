@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Accueil from '../views/Accueil.vue'
-import Profil from "@/views/Profil";
 import Carte from "@/views/Carte";
 import GoogleMap from "@/components/GoogleMap";
 import FicheCocktail from "@/components/FicheCocktail";
@@ -30,11 +29,6 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     // A voir : c'est quoi ça Monsieur ?
     component: Favoris
-  },
-  {
-    path: '/profil',
-    name: 'Profil',
-    component: Profil
   },
   {
     path: '/random',

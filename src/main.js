@@ -11,6 +11,7 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 import { LMap, LTileLayer, LMarker } from 'vue2-leaflet';
 import 'leaflet/dist/leaflet.css';
 
+//importation du module pour utilisation de l'API Google Maps
 import * as VueGoogleMaps from "vue2-google-maps";
 
 
@@ -23,9 +24,10 @@ Vue.component('l-map', LMap);
 Vue.component('l-tile-layer', LTileLayer);
 Vue.component('l-marker', LMarker);
 
+//Connexion à l'API et utilisation de la librairie Places
 Vue.use(VueGoogleMaps, {
   load: {
-    key: "AIzaSyBqd-wFOtpvWaLwrjih3DbeP-thR0Em_0k",
+    key: "AIzaSyBqd-wFOtpvWaLwrjih3DbeP-thR0Em_0k", //obtention de la clé via Google Cloud Platform
     libraries: "places" // necessary for places input
   }
 });
