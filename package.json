@@ -18,7 +18,8 @@
     "vue": "^2.6.12",
     "vue-router": "^3.2.0",
     "vue2-google-maps": "^0.10.7",
-    "vue2-leaflet": "^2.6.0"
+    "vue2-leaflet": "^2.6.0",
+    "vuejs-google-maps": "0.0.10"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",

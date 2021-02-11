@@ -12,7 +12,7 @@ import { LMap, LTileLayer, LMarker } from 'vue2-leaflet';
 import 'leaflet/dist/leaflet.css';
 
 import * as VueGoogleMaps from "vue2-google-maps";
-
+import VueGoogleMap from 'vuejs-google-maps'
 
 // Make BootstrapVue available throughout your project
 Vue.use(BootstrapVue)
@@ -29,7 +29,12 @@ Vue.use(VueGoogleMaps, {
     libraries: "places" // necessary for places input
   }
 });
-
+Vue.use(VueGoogleMap, {
+  load: {
+    apiKey: 'AIzaSyBqd-wFOtpvWaLwrjih3DbeP-thR0Em_0k',
+    libraries: ['places']// necessary for places input
+  }
+});
 Vue.config.productionTip = false
 
 new Vue({
