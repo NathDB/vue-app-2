@@ -30,7 +30,7 @@
           <!--<li v-if="!{{cocktail_details.strIngredient7}}">{{cocktail_details.strIngredient7}}</li>-->
         </ul>
       </div>
-      <b-button class="mt-3" block @click="$bvModal.hide('bv-modal-example')">Close Me</b-button>
+<!--      <b-button class="mt-3" block @click="$bvModal.hide('bv-modal-example')">Close Me</b-button>-->
     </b-modal>
   </div>
 

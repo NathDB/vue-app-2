@@ -8,8 +8,8 @@ import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
-import { LMap, LTileLayer, LMarker } from 'vue2-leaflet';
-import 'leaflet/dist/leaflet.css';
+/*import { LMap, LTileLayer, LMarker } from 'vue2-leaflet';
+import 'leaflet/dist/leaflet.css';*/
 
 //importation du module pour utilisation de l'API Google Maps
 import * as VueGoogleMaps from "vue2-google-maps";
@@ -20,9 +20,9 @@ Vue.use(BootstrapVue)
 // Optionally install the BootstrapVue icon components plugin
 Vue.use(IconsPlugin)
 
-Vue.component('l-map', LMap);
+/*Vue.component('l-map', LMap);
 Vue.component('l-tile-layer', LTileLayer);
-Vue.component('l-marker', LMarker);
+Vue.component('l-marker', LMarker);*/
 
 //Connexion à l'API et utilisation de la librairie Places
 Vue.use(VueGoogleMaps, {

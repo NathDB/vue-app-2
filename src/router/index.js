@@ -6,6 +6,7 @@ import GoogleMap from "@/components/GoogleMap";
 import FicheCocktail from "@/components/FicheCocktail";
 import Recherche from "@/views/Recherche";
 import Favoris from "@/views/Favoris";
+import Random from "@/views/Random";
 
 Vue.use(VueRouter)
 
@@ -33,6 +34,7 @@ const routes = [
   {
     path: '/random',
     name: 'Random',
+    component: Random
   },
   {
     path: '/trouver-un-bar',

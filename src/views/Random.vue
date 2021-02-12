@@ -1,8 +1,7 @@
 <template>
-  <div class="random container d-flex justify-content-center">
-    <h1>cououcuu</h1>
+  <div class="random container d-flex justify-content-center flex-column">
+    <h1 class="text-center m-5">Tadaaam !</h1>
     <p>A venir...</p>
-
   </div>
 </template>
 
@@ -13,7 +12,7 @@ export default {
   name: 'Random',
   data(){
     return {
-      cocktail_random:[],
+      cocktail_random:{},
     }
   },
   beforeCreate() {
