@@ -1,6 +1,6 @@
 <template>
-  <div className="random container d-flex justify-content-center flex-column">
-    <h1 className="text-center m-5">Tadaaam !</h1>
+  <div class="random container d-flex justify-content-center flex-column">
+    <h1 class="text-center m-5">Tadaaam !</h1>
     <p>A venir...</p>
   </div>
 </template>
