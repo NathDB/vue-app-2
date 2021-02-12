@@ -1,9 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Accueil from '../views/Accueil.vue'
-import Profil from "@/views/Profil";
-import Carte from "@/views/Carte";
-import GoogleMap from "@/components/GoogleMap";
 import FicheCocktail from "@/components/FicheCocktail";
 import Recherche from "@/views/Recherche";
 import Favoris from "@/views/Favoris";
@@ -32,19 +29,14 @@ const routes = [
     component: Favoris
   },
   {
-    path: '/profil',
-    name: 'Profil',
-    component: Profil
-  },
-  {
     path: '/random',
     name: 'Random',
   },
-  {
-    path: '/trouver-un-bar',
-    name: 'Carte',
-    component: GoogleMap
-  }
+  // {
+  //   path: '/trouver-un-bar',
+  //   name: 'Carte',
+  //   component: GoogleMap
+  // }
 
 ]
 

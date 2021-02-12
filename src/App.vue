@@ -13,7 +13,7 @@
             <b-nav-item v-bind:to="'/recherche'">Rechercher</b-nav-item>
             <b-nav-item v-bind:to="'/favoris'">Favoris</b-nav-item>
             <b-nav-item v-bind:to="'/random'">Random !</b-nav-item>
-            <b-nav-item v-bind:to="'/trouver-un-bar'">Trouver un bar</b-nav-item>
+<!--            <b-nav-item v-bind:to="'/trouver-un-bar'">Trouver un bar</b-nav-item>-->
             <b-avatar></b-avatar>
           </b-navbar-nav>
         </b-collapse>

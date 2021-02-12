@@ -1,3 +1,4 @@
+<!--
 <template>
   <div class="carte">
     <GoogleMap/>
@@ -8,3 +9,4 @@
 
 </script>
 
+-->

@@ -1,3 +1,4 @@
+<!--
 <template>
   <div class="googlemap">
     <div class="ui grid">
@@ -117,4 +118,4 @@ export default {
 
 <style scoped>
 
-</style>
+</style>-->
