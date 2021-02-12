@@ -1,8 +1,7 @@
 <template>
-  <div class="random container d-flex justify-content-center">
-    <h1>cououcuu</h1>
-    <pre>{{cocktail_random}}</pre>
-
+  <div className="random container d-flex justify-content-center flex-column">
+    <h1 className="text-center m-5">Tadaaam !</h1>
+    <p>A venir...</p>
   </div>
 </template>
 
@@ -11,9 +10,9 @@ import axios from "axios";
 
 export default {
   name: 'Random',
-  data(){
+  data() {
     return {
-      cocktail_random:[],
+      cocktail_random: {},
     }
   },
   beforeCreate() {
@@ -28,6 +27,4 @@ export default {
         });
   }
 }
-
-
 </script>
